@@ -1,0 +1,36 @@
+{
+  "week": "2026-W24",
+  "generated_at": "2026-06-10T08:29-0400",
+  "scenario": "C",
+  "regime": {
+    "scenario": "C"
+  },
+  "weekly_signals": [
+    {
+      "date": "2026-06-08",
+      "direction": "UP",
+      "vote": "4/7",
+      "action": "nan",
+      "actual_return": 0.0441,
+      "correct": true,
+      "risk_state": "RISK_ACTIVE"
+    }
+  ],
+  "weekly_accuracy": "1/1",
+  "cumulative": {
+    "accuracy_pct": 1.0,
+    "n_correct": 1,
+    "n_total": 1,
+    "normal_accuracy_pct": null
+  },
+  "model_b": {
+    "current_signal": 1,
+    "signal_date": "2026-06-05",
+    "alert_weeks": 0
+  },
+  "trace": {
+    "match_rate": 1.0,
+    "n_match": 2,
+    "n_mismatch": 0
+  }
+}
