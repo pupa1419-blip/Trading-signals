@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDXalgo · Performance</title>
+  <style>
+    :root {
+      --bg:      #0d1117;
+      --surface: #161b22;
+      --border:  #30363d;
+      --text:    #e6edf3;
+      --muted:   #7d8590;
+      --green:   #3fb950;
+      --red:     #f85149;
+      --yellow:  #d29922;
+      --blue:    #58a6ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1 { font-size: 1.4rem; font-weight: 600; }
+    h2 {
+      font-size: 0.75rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 14px;
+    }
+    .header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
+    }
+    .header-meta { font-size: 0.8rem; color: var(--muted); text-align: right; }
+    .badge {
+      display: inline-block; padding: 3px 10px; border-radius: 12px;
+      font-size: 0.8rem; font-weight: 600; margin-top: 6px;
+    }
+    .green  { background: rgba(63,185,80,.15);  color: var(--green);  border: 1px solid rgba(63,185,80,.3); }
+    .red    { background: rgba(248,81,73,.15);  color: var(--red);    border: 1px solid rgba(248,81,73,.3); }
+    .yellow { background: rgba(210,153,34,.15); color: var(--yellow); border: 1px solid rgba(210,153,34,.3); }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px; margin-bottom: 16px;
+    }
+    .stat-row { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 18px; align-items: flex-end; }
+    .stat { text-align: center; }
+    .stat-num   { font-size: 1.9rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+    .stat-big   { font-size: 3rem; font-weight: 800; line-height: 1; }
+    .stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+    .bar-row    { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; font-size: 0.83rem; }
+    .bar-label  { width: 110px; color: var(--muted); white-space: nowrap; }
+    .bar-track  { flex: 1; height: 5px; background: var(--border); border-radius: 3px; }
+    .bar-fill   { height: 100%; border-radius: 3px; }
+    .bar-pct    { width: 50px; text-align: right; font-variant-numeric: tabular-nums; }
+    .status-detail {
+      margin-top: 12px; padding: 12px 14px;
+      background: rgba(248,81,73,.07); border: 1px solid rgba(248,81,73,.2);
+      border-radius: 6px; font-size: 0.85rem; color: #cda0a0;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    th {
+      text-align: left; color: var(--muted); font-weight: 500;
+      padding: 6px 10px; border-bottom: 1px solid var(--border);
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    td { padding: 8px 10px; border-bottom: 1px solid rgba(48,54,61,.5); font-variant-numeric: tabular-nums; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,.02); }
+    .c-yes  { color: var(--green); font-weight: 600; }
+    .c-no   { color: var(--red);   font-weight: 600; }
+    .c-pend { color: var(--muted); }
+    .ret-p  { color: var(--green); }
+    .ret-n  { color: var(--red); }
+    .mb-stats { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 18px; }
+    .disclaimer {
+      font-size: 0.73rem; color: var(--muted); margin-top: 24px;
+      padding-top: 16px; border-top: 1px solid var(--border); line-height: 1.7;
+    }
+    #loading, #error { text-align: center; padding: 60px; color: var(--muted); font-size: 0.9rem; }
+    #error { color: var(--red); }
+    @media (max-width: 600px) {
+      .stat-big { font-size: 2.2rem; }
+      .stat-num { font-size: 1.5rem; }
+      td, th { padding: 6px 6px; font-size: 0.78rem; }
+      .bar-label { width: 80px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"><div id="loading">Loading…</div></div>
+
+  <script>
+  const REPO = 'pupa1419-blip/Trading-signals';
+  const RAW  = `https://raw.githubusercontent.com/${REPO}/main`;
+
+  async function get(file) {
+    try {
+      const r = await fetch(`${RAW}/${file}?t=${Date.now()}`);
+      return r.ok ? r.json() : null;
+    } catch { return null; }
+  }
+
+  function fmt(v, digits=1) {
+    if (v === null || v === undefined) return '—';
+    return (v * 100).toFixed(digits) + '%';
+  }
+
+  function bar(val, color) {
+    const w = val !== null && val !== undefined ? Math.round(val * 100) : 0;
+    return `<div class="bar-track"><div class="bar-fill" style="width:${w}%;background:${color}"></div></div>`;
+  }
+
+  function regimeInfo(weekly) {
+    if (!weekly) return { label: '—', cls: 'yellow', detail: null };
+    const sc = (weekly.scenario || weekly.regime?.scenario || 'A');
+    if (sc === 'A') return { label: '🟢 Normal — trading active', cls: 'green', detail: null };
+    if (sc === 'D') return { label: '✅ Bear Watch resolved', cls: 'green', detail: null };
+    if (sc === 'E') return { label: '⏰ Bear Watch expired (12-week timeout)', cls: 'yellow', detail: null };
+    const r     = weekly.regime || {};
+    const call  = r.ndx_call_level ? r.ndx_call_level.toLocaleString('en-US', {maximumFractionDigits: 0}) : '—';
+    const tgt   = r.ndx_target     ? r.ndx_target.toLocaleString('en-US', {maximumFractionDigits: 0}) : '—';
+    const now   = r.ndx_now        ? r.ndx_now.toLocaleString('en-US', {maximumFractionDigits: 0}) : '—';
+    const weeks = r.weeks_in_risk  || '?';
+    return {
+      label: '🔴 Bear Watch active',
+      cls: 'red',
+      detail: `Called at NDX ${call} &nbsp;·&nbsp; Target: −10% → ${tgt} &nbsp;·&nbsp; Current: ${now} &nbsp;·&nbsp; Week ${weeks} / 12`,
+    };
+  }
+
+  function render(perf, weekly, eps) {
+    const ma   = perf.model_a || {};
+    const hist = perf.signal_history || [];
+    const reg  = regimeInfo(weekly);
+
+    // ── Header ──────────────────────────────────────────────────────────
+    const updatedAt = (perf.generated_at || '').slice(0, 10) || '—';
+    const html_header = `
+      <div class="header">
+        <div>
+          <h1>NDXalgo &middot; Signal Performance</h1>
+          <span class="badge ${reg.cls}">${reg.label}</span>
+        </div>
+        <div class="header-meta">
+          <div>Updated ${updatedAt}</div>
+          <div style="margin-top:5px"><a href="https://github.com/${REPO}">↗ GitHub</a></div>
+        </div>
+      </div>`;
+
+    // ── Section 1: Model A Accuracy ──────────────────────────────────────
+    const accStr = ma.accuracy_pct !== null && ma.accuracy_pct !== undefined
+      ? (ma.accuracy_pct * 100).toFixed(1) + '%' : '—';
+    const nTotal = ma.n_total   || 0;
+    const nCor   = ma.n_correct || 0;
+
+    const barRows = [
+      ['NEUTRAL',      ma.neutral_accuracy_pct, 'var(--blue)'],
+      ['UP',           ma.up_accuracy_pct,       'var(--green)'],
+      ['Normal regime',ma.normal_accuracy_pct,   '#8b949e'],
+      ['Risk regime',  ma.risk_accuracy_pct,      'var(--yellow)'],
+    ].filter(([,v]) => v !== null && v !== undefined)
+     .map(([lbl, v, c]) => `
+      <div class="bar-row">
+        <span class="bar-label">${lbl}</span>
+        ${bar(v, c)}
+        <span class="bar-pct">${fmt(v)}</span>
+      </div>`).join('');
+
+    const html_s1 = `
+      <div class="card">
+        <h2>Model A &mdash; Daily Direction Accuracy</h2>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="stat-big" style="color:var(--green)">${accStr}</div>
+            <div class="stat-label">All-time accuracy</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">${nTotal}</div>
+            <div class="stat-label">Signals verified</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" style="color:var(--green)">${nCor}</div>
+            <div class="stat-label">Correct</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" style="color:var(--red)">${nTotal - nCor}</div>
+            <div class="stat-label">Incorrect</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">${perf.n_signals_logged || nTotal}</div>
+            <div class="stat-label">Signals logged</div>
+          </div>
+        </div>
+        ${barRows}
+      </div>`;
+
+    // ── Section 2: Current Status ─────────────────────────────────────────
+    const detailHTML = reg.detail
+      ? `<div class="status-detail">${reg.detail}</div>` : '';
+    const html_s2 = `
+      <div class="card">
+        <h2>Current Regime</h2>
+        <span class="badge ${reg.cls}" style="font-size:0.95rem;padding:5px 14px">${reg.label}</span>
+        ${detailHTML}
+      </div>`;
+
+    // ── Section 3: Signal History ─────────────────────────────────────────
+    const tableRows = hist.slice().reverse().map(s => {
+      const rv  = s.actual_return;
+      const rs  = rv != null ? `${rv >= 0 ? '+' : ''}${(rv * 100).toFixed(2)}%` : '—';
+      const rc  = rv != null ? (rv >= 0 ? 'ret-p' : 'ret-n') : '';
+      const reg_icon = (s.risk_state || '').includes('RISK') ? '🔴' : '🟢';
+      let result;
+      if (s.correct === true)       result = '<span class="c-yes">✅</span>';
+      else if (s.correct === false) result = '<span class="c-no">❌</span>';
+      else                          result = '<span class="c-pend">pending</span>';
+      return `<tr>
+        <td>${s.date}</td>
+        <td>${s.direction}</td>
+        <td style="color:var(--muted)">${s.vote}</td>
+        <td class="${rc}">${rs}</td>
+        <td>${reg_icon}</td>
+        <td>${result}</td>
+      </tr>`;
+    }).join('');
+
+    const html_s3 = `
+      <div class="card">
+        <h2>Signal History &mdash; ${hist.length} signals verified</h2>
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr>
+              <th>Date</th><th>Direction</th><th>Vote</th>
+              <th>TQQQ Return</th><th>Regime</th><th>Result</th>
+            </tr></thead>
+            <tbody>${tableRows ||
+              '<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--muted)">No verified signals yet</td></tr>'
+            }</tbody>
+          </table>
+        </div>
+      </div>`;
+
+    // ── Section 4: Model B Track Record ──────────────────────────────────
+    let html_s4 = '';
+    if (eps) {
+      const mb = eps.model_b || {};
+      const acc = mb.accuracy != null ? (mb.accuracy * 100).toFixed(0) + '%' : '—';
+      const epRows = (eps.episodes || []).map(ep => {
+        const oc = (ep.outcome || 'active').toLowerCase();
+        const cls  = oc === 'correct' ? 'c-yes' : oc === 'miss' ? 'c-no' : 'c-pend';
+        const icon = oc === 'correct' ? '✅ Correct'
+                   : oc === 'miss'    ? '❌ Missed'
+                   :                    '⏳ Active';
+        const dd   = ep.max_drawdown != null ? (ep.max_drawdown * 100).toFixed(1) + '%' : '—';
+        const wks  = ep.weeks != null ? ep.weeks : '—';
+        const ndxC = ep.ndx_call != null ? ep.ndx_call.toLocaleString('en-US', {maximumFractionDigits: 0}) : '—';
+        const ndxT = ep.ndx_target != null ? ep.ndx_target.toLocaleString('en-US', {maximumFractionDigits: 0}) : '—';
+        return `<tr>
+          <td>#${String(ep.id || 0).padStart(3,'0')}</td>
+          <td>${ep.call_date || '—'}</td>
+          <td>${ndxC}</td>
+          <td>${ndxT}</td>
+          <td>${wks}</td>
+          <td>${dd}</td>
+          <td><span class="${cls}">${icon}</span></td>
+        </tr>`;
+      }).join('');
+
+      html_s4 = `
+        <div class="card">
+          <h2>Model B &mdash; Bear Watch Track Record</h2>
+          <div class="mb-stats">
+            <div class="stat">
+              <div class="stat-num">${mb.n_resolved || 0}</div>
+              <div class="stat-label">Resolved calls</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" style="color:var(--green)">${mb.n_correct || 0}</div>
+              <div class="stat-label">Correct</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" style="color:var(--red)">${mb.n_miss || 0}</div>
+              <div class="stat-label">Missed</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">${acc}</div>
+              <div class="stat-label">Accuracy</div>
+            </div>
+          </div>
+          <div style="overflow-x:auto">
+            <table>
+              <thead><tr>
+                <th>#</th><th>Call Date</th><th>NDX at Call</th>
+                <th>Target (−10%)</th><th>Weeks</th><th>Max Drawdown</th><th>Outcome</th>
+              </tr></thead>
+              <tbody>${epRows ||
+                '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--muted)">No bear calls yet</td></tr>'
+              }</tbody>
+            </table>
+          </div>
+        </div>`;
+    }
+
+    // ── Disclaimer ────────────────────────────────────────────────────────
+    const html_disc = `
+      <div class="disclaimer">
+        Model A signals are generated at 3&nbsp;PM ET before market close and committed to
+        <a href="https://github.com/${REPO}/blob/main/signal_log.jsonl">signal_log.jsonl</a>
+        with immutable GitHub timestamps — providing tamper-evident proof that signals precede outcomes.<br>
+        Past performance does not guarantee future results. This is not financial advice.
+      </div>`;
+
+    document.getElementById('app').innerHTML =
+      html_header + html_s1 + html_s2 + html_s3 + html_s4 + html_disc;
+  }
+
+  async function main() {
+    const [perf, weekly, eps] = await Promise.all([
+      get('performance.json'),
+      get('weekly_summary.json'),
+      get('episode_summary.json'),
+    ]);
+    if (!perf) {
+      document.getElementById('app').innerHTML =
+        `<div id="error">performance.json not found — check back after the first weekly update.</div>`;
+      return;
+    }
+    render(perf, weekly, eps);
+  }
+
+  main();
+  </script>
+</body>
+</html>
