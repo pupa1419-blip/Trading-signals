@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-13T22:50-0400",
-  "n_signals_logged": 5,
+  "generated_at": "2026-06-13T22:52-0400",
+  "n_signals_logged": 4,
   "model_a": {
-    "n_total": 5,
+    "n_total": 4,
     "n_correct": 2,
-    "accuracy_pct": 0.4,
+    "accuracy_pct": 0.5,
     "n_up": 0,
-    "n_neutral": 5,
+    "n_neutral": 4,
     "up_accuracy_pct": null,
-    "neutral_accuracy_pct": 0.4,
+    "neutral_accuracy_pct": 0.5,
     "n_normal": 0,
-    "n_risk": 5,
+    "n_risk": 4,
     "normal_accuracy_pct": null,
-    "risk_accuracy_pct": 0.4
+    "risk_accuracy_pct": 0.5
   },
   "signal_history": [
     {
@@ -39,15 +39,6 @@
       "vote": "8/9",
       "action": "SKIP_RISK",
       "actual_return": 0.0973,
-      "correct": false,
-      "risk_state": "RISK_ACTIVE"
-    },
-    {
-      "date": "2026-06-12",
-      "direction": "NEUTRAL",
-      "vote": "8/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.0199,
       "correct": false,
       "risk_state": "RISK_ACTIVE"
     },
