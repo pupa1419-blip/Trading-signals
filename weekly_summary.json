@@ -46,22 +46,13 @@
       "actual_return": 0.0199,
       "correct": false,
       "risk_state": "RISK_ACTIVE"
-    },
-    {
-      "date": "2026-06-12",
-      "direction": "NEUTRAL",
-      "vote": "8/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.0199,
-      "correct": false,
-      "risk_state": "RISK_ACTIVE"
     }
   ],
-  "weekly_accuracy": "2/5",
+  "weekly_accuracy": "2/4",
   "cumulative": {
-    "accuracy_pct": 0.4,
+    "accuracy_pct": 0.5,
     "n_correct": 2,
-    "n_total": 5,
+    "n_total": 4,
     "normal_accuracy_pct": null
   },
   "model_b": {
