@@ -1,36 +1,77 @@
 {
   "week": "2026-W24",
-  "generated_at": "2026-06-10T08:29-0400",
+  "generated_at": "2026-06-13T22:50-0400",
   "scenario": "C",
   "regime": {
-    "scenario": "C"
+    "scenario": "C",
+    "state": "RISK_ONGOING",
+    "weeks_in_risk": 1,
+    "ndx_call_level": 28957.6,
+    "ndx_target": 26061.8,
+    "ndx_now": 29635.95
   },
   "weekly_signals": [
     {
-      "date": "2026-06-08",
-      "direction": "UP",
-      "vote": "4/7",
-      "action": "nan",
-      "actual_return": 0.0441,
+      "date": "2026-06-09",
+      "direction": "NEUTRAL",
+      "vote": "8/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0334,
       "correct": true,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-06-10",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0604,
+      "correct": true,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-06-11",
+      "direction": "NEUTRAL",
+      "vote": "8/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0973,
+      "correct": false,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-06-12",
+      "direction": "NEUTRAL",
+      "vote": "8/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0199,
+      "correct": false,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-06-12",
+      "direction": "NEUTRAL",
+      "vote": "8/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0199,
+      "correct": false,
       "risk_state": "RISK_ACTIVE"
     }
   ],
-  "weekly_accuracy": "1/1",
+  "weekly_accuracy": "2/5",
   "cumulative": {
-    "accuracy_pct": 1.0,
-    "n_correct": 1,
-    "n_total": 1,
+    "accuracy_pct": 0.4,
+    "n_correct": 2,
+    "n_total": 5,
     "normal_accuracy_pct": null
   },
   "model_b": {
     "current_signal": 1,
-    "signal_date": "2026-06-05",
+    "signal_date": "2026-06-12",
     "alert_weeks": 0
   },
   "trace": {
     "match_rate": 1.0,
-    "n_match": 2,
+    "n_match": 5,
     "n_mismatch": 0
   }
 }
