@@ -3,3 +3,4 @@
 {"signal_date": "2026-06-11", "logged_at": "2026-06-10T15:00:11-0400", "risk_state": "RISK_ACTIVE", "consensus_a": "NEUTRAL", "vote_sum_a": 8, "vote_th_a": 7, "signal_b": 0}
 {"signal_date": "2026-06-12", "logged_at": "2026-06-11T15:00:18-0400", "risk_state": "RISK_ACTIVE", "consensus_a": "NEUTRAL", "vote_sum_a": 8, "vote_th_a": 7, "signal_b": 0}
 {"signal_date": "2026-06-16", "logged_at": "2026-06-15T15:00:18-0400", "risk_state": "RISK_ONGOING", "consensus_a": "UP", "vote_sum_a": 6, "vote_th_a": 7, "signal_b": 0}
+{"signal_date": "2026-06-18", "logged_at": "2026-06-17T15:00:18-0400", "risk_state": "RISK_ONGOING", "consensus_a": "UP", "vote_sum_a": 5, "vote_th_a": 7, "signal_b": 0}
