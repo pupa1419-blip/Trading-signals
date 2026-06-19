@@ -1,34 +1,16 @@
 {
-  "week": "2026-W24",
-  "generated_at": "2026-06-13T22:50-0400",
+  "week": "2026-W25",
+  "generated_at": "2026-06-19T16:30-0400",
   "scenario": "C",
   "regime": {
     "scenario": "C",
     "state": "RISK_ONGOING",
-    "weeks_in_risk": 1,
+    "weeks_in_risk": 2,
     "ndx_call_level": 28957.6,
     "ndx_target": 26061.8,
-    "ndx_now": 29635.95
+    "ndx_now": 30406.19
   },
   "weekly_signals": [
-    {
-      "date": "2026-06-09",
-      "direction": "NEUTRAL",
-      "vote": "8/9",
-      "action": "SKIP_RISK",
-      "actual_return": -0.0334,
-      "correct": true,
-      "risk_state": "RISK_ACTIVE"
-    },
-    {
-      "date": "2026-06-10",
-      "direction": "NEUTRAL",
-      "vote": "7/9",
-      "action": "SKIP_RISK",
-      "actual_return": -0.0604,
-      "correct": true,
-      "risk_state": "RISK_ACTIVE"
-    },
     {
       "date": "2026-06-11",
       "direction": "NEUTRAL",
@@ -46,23 +28,50 @@
       "actual_return": 0.0199,
       "correct": false,
       "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-06-15",
+      "direction": "NEUTRAL",
+      "vote": "8/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0912,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-06-16",
+      "direction": "UP",
+      "vote": "6/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0551,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-06-18",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0687,
+      "correct": true,
+      "risk_state": "RISK_ONGOING"
     }
   ],
-  "weekly_accuracy": "2/4",
+  "weekly_accuracy": "1/5",
   "cumulative": {
-    "accuracy_pct": 0.5,
-    "n_correct": 2,
-    "n_total": 4,
+    "accuracy_pct": 0.429,
+    "n_correct": 3,
+    "n_total": 7,
     "normal_accuracy_pct": null
   },
   "model_b": {
     "current_signal": 1,
-    "signal_date": "2026-06-12",
+    "signal_date": "2026-06-19",
     "alert_weeks": 0
   },
   "trace": {
     "match_rate": 1.0,
-    "n_match": 5,
+    "n_match": 9,
     "n_mismatch": 0
   }
 }
