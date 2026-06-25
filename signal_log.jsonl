@@ -10,3 +10,4 @@
 {"signal_date": "2026-06-23", "logged_at": "2026-06-22T15:00:20-0400", "risk_state": "RISK_ONGOING", "consensus_a": "UP", "vote_sum_a": 5, "vote_th_a": 7, "signal_b": 0}
 {"signal_date": "2026-06-24", "logged_at": "2026-06-23T15:00:21-0400", "risk_state": "RISK_ONGOING", "consensus_a": "UP", "vote_sum_a": 6, "vote_th_a": 7, "signal_b": 0}
 {"signal_date": "2026-06-25", "logged_at": "2026-06-24T15:00:20-0400", "risk_state": "RISK_ONGOING", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "signal_b": 0}
+{"signal_date": "2026-06-26", "logged_at": "2026-06-25T15:00:20-0400", "risk_state": "RISK_ONGOING", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "signal_b": 0}
