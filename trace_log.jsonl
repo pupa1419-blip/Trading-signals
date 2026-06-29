@@ -10,3 +10,4 @@
 {"signal_date": "2026-06-24", "logged_at": "2026-06-23T16:05:05-0400", "consensus_a": "UP", "vote_sum_a": 6, "vote_th_a": 7, "match_signal": true, "close_prev": 29347.27}
 {"signal_date": "2026-06-25", "logged_at": "2026-06-24T16:05:09-0400", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "match_signal": true, "close_prev": 29220.06}
 {"signal_date": "2026-06-26", "logged_at": "2026-06-25T16:05:07-0400", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "match_signal": true, "close_prev": 29440.32}
+{"signal_date": "2026-06-30", "logged_at": "2026-06-29T16:05:06-0400", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "match_signal": true, "close_prev": 29774.75}
