@@ -13,3 +13,4 @@
 {"signal_date": "2026-06-30", "logged_at": "2026-06-29T16:05:06-0400", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "match_signal": true, "close_prev": 29774.75}
 {"signal_date": "2026-07-01", "logged_at": "2026-06-30T16:05:05-0400", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "match_signal": true, "close_prev": 30276.35}
 {"signal_date": "2026-07-02", "logged_at": "2026-07-01T16:05:05-0400", "consensus_a": "UP", "vote_sum_a": 4, "vote_th_a": 7, "match_signal": true, "close_prev": 29809.13}
+{"signal_date": "2026-07-07", "logged_at": "2026-07-06T16:05:06-0400", "consensus_a": "UP", "vote_sum_a": 5, "vote_th_a": 7, "match_signal": true, "close_prev": 29697.87}
