@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T16:30-0400",
+  "generated_at": "2026-07-10T16:30-0400",
   "model_b": {
     "n_resolved": 0,
     "n_correct": 0,
@@ -12,8 +12,8 @@
     "call_date": "2026-06-05",
     "ndx_call_level": 28957.6,
     "ndx_target": 26061.8,
-    "weeks_in_risk": 2,
-    "current_drawdown": 0.05
+    "weeks_in_risk": 5,
+    "current_drawdown": 0.03
   },
   "episodes": [
     {
