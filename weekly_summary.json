@@ -1,52 +1,16 @@
 {
-  "week": "2026-W28",
-  "generated_at": "2026-07-10T16:30-0400",
+  "week": "2026-W29",
+  "generated_at": "2026-07-17T16:30-0400",
   "scenario": "C",
   "regime": {
     "scenario": "C",
     "state": "RISK_ONGOING",
-    "weeks_in_risk": 5,
+    "weeks_in_risk": 6,
     "ndx_call_level": 28957.6,
     "ndx_target": 26061.8,
-    "ndx_now": 29825.11
+    "ndx_now": 28592.66
   },
   "weekly_signals": [
-    {
-      "date": "2026-07-02",
-      "direction": "UP",
-      "vote": "4/9",
-      "action": "SKIP_RISK",
-      "actual_return": -0.0531,
-      "correct": false,
-      "risk_state": "RISK_ONGOING"
-    },
-    {
-      "date": "2026-07-07",
-      "direction": "UP",
-      "vote": "5/9",
-      "action": "SKIP_RISK",
-      "actual_return": -0.0548,
-      "correct": false,
-      "risk_state": "RISK_ONGOING"
-    },
-    {
-      "date": "2026-07-08",
-      "direction": "UP",
-      "vote": "4/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.0068,
-      "correct": true,
-      "risk_state": "RISK_ONGOING"
-    },
-    {
-      "date": "2026-07-09",
-      "direction": "UP",
-      "vote": "4/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.0498,
-      "correct": true,
-      "risk_state": "RISK_ONGOING"
-    },
     {
       "date": "2026-07-10",
       "direction": "UP",
@@ -55,18 +19,54 @@
       "actual_return": 0.009,
       "correct": true,
       "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-13",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.057,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-14",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0328,
+      "correct": true,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-15",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0077,
+      "correct": true,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-17",
+      "direction": "UP",
+      "vote": "4/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0454,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
     }
   ],
   "weekly_accuracy": "3/5",
   "cumulative": {
-    "accuracy_pct": 0.444,
-    "n_correct": 8,
-    "n_total": 18,
+    "accuracy_pct": 0.455,
+    "n_correct": 10,
+    "n_total": 22,
     "normal_accuracy_pct": null
   },
   "model_b": {
     "current_signal": 1,
-    "signal_date": "2026-07-10",
+    "signal_date": "2026-07-17",
     "alert_weeks": 0
   },
   "trace": {
