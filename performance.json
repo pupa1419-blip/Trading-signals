@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-10T16:30-0400",
-  "n_signals_logged": 22,
+  "generated_at": "2026-07-17T16:30-0400",
+  "n_signals_logged": 26,
   "model_a": {
-    "n_total": 18,
-    "n_correct": 8,
-    "accuracy_pct": 0.444,
-    "n_up": 9,
-    "n_neutral": 9,
-    "up_accuracy_pct": 0.444,
-    "neutral_accuracy_pct": 0.444,
+    "n_total": 22,
+    "n_correct": 10,
+    "accuracy_pct": 0.455,
+    "n_up": 12,
+    "n_neutral": 10,
+    "up_accuracy_pct": 0.417,
+    "neutral_accuracy_pct": 0.5,
     "n_normal": 0,
-    "n_risk": 18,
+    "n_risk": 22,
     "normal_accuracy_pct": null,
-    "risk_accuracy_pct": 0.444
+    "risk_accuracy_pct": 0.455
   },
   "signal_history": [
     {
@@ -175,6 +175,42 @@
       "action": "SKIP_RISK",
       "actual_return": 0.009,
       "correct": true,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-13",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.057,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-14",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0328,
+      "correct": true,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-15",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0077,
+      "correct": true,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-17",
+      "direction": "UP",
+      "vote": "4/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0454,
+      "correct": false,
       "risk_state": "RISK_ONGOING"
     }
   ]
