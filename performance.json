@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-17T16:30-0400",
-  "n_signals_logged": 26,
+  "generated_at": "2026-08-07T16:30-0400",
+  "n_signals_logged": 28,
   "model_a": {
-    "n_total": 22,
-    "n_correct": 10,
-    "accuracy_pct": 0.455,
-    "n_up": 12,
-    "n_neutral": 10,
-    "up_accuracy_pct": 0.417,
-    "neutral_accuracy_pct": 0.5,
+    "n_total": 25,
+    "n_correct": 11,
+    "accuracy_pct": 0.44,
+    "n_up": 13,
+    "n_neutral": 12,
+    "up_accuracy_pct": 0.462,
+    "neutral_accuracy_pct": 0.417,
     "n_normal": 0,
-    "n_risk": 22,
+    "n_risk": 25,
     "normal_accuracy_pct": null,
-    "risk_accuracy_pct": 0.455
+    "risk_accuracy_pct": 0.44
   },
   "signal_history": [
     {
@@ -210,6 +210,33 @@
       "vote": "4/9",
       "action": "SKIP_RISK",
       "actual_return": -0.0454,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-20",
+      "direction": "UP",
+      "vote": "6/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0018,
+      "correct": true,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.055,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.055,
       "correct": false,
       "risk_state": "RISK_ONGOING"
     }
