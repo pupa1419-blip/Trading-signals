@@ -35,4 +35,4 @@ Weekly bear risk detection. When triggered, all Model A trades are suspended for
 
 ---
 
-*Last updated: 2026-07-17 — Past performance does not guarantee future results. Not financial advice.*
+*Last updated: 2026-08-07 — Past performance does not guarantee future results. Not financial advice.*
