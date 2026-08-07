@@ -1,43 +1,16 @@
 {
-  "week": "2026-W29",
-  "generated_at": "2026-07-17T16:30-0400",
+  "week": "2026-W32",
+  "generated_at": "2026-08-07T16:30-0400",
   "scenario": "C",
   "regime": {
     "scenario": "C",
     "state": "RISK_ONGOING",
-    "weeks_in_risk": 6,
+    "weeks_in_risk": 9,
     "ndx_call_level": 28957.6,
     "ndx_target": 26061.8,
-    "ndx_now": 28592.66
+    "ndx_now": 29722.3
   },
   "weekly_signals": [
-    {
-      "date": "2026-07-10",
-      "direction": "UP",
-      "vote": "6/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.009,
-      "correct": true,
-      "risk_state": "RISK_ONGOING"
-    },
-    {
-      "date": "2026-07-13",
-      "direction": "UP",
-      "vote": "5/9",
-      "action": "SKIP_RISK",
-      "actual_return": -0.057,
-      "correct": false,
-      "risk_state": "RISK_ONGOING"
-    },
-    {
-      "date": "2026-07-14",
-      "direction": "UP",
-      "vote": "5/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.0328,
-      "correct": true,
-      "risk_state": "RISK_ONGOING"
-    },
     {
       "date": "2026-07-15",
       "direction": "NEUTRAL",
@@ -55,23 +28,50 @@
       "actual_return": -0.0454,
       "correct": false,
       "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-20",
+      "direction": "UP",
+      "vote": "6/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0018,
+      "correct": true,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.055,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.055,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
     }
   ],
-  "weekly_accuracy": "3/5",
+  "weekly_accuracy": "2/5",
   "cumulative": {
-    "accuracy_pct": 0.455,
-    "n_correct": 10,
-    "n_total": 22,
+    "accuracy_pct": 0.44,
+    "n_correct": 11,
+    "n_total": 25,
     "normal_accuracy_pct": null
   },
   "model_b": {
     "current_signal": 1,
-    "signal_date": "2026-07-17",
+    "signal_date": "2026-08-07",
     "alert_weeks": 0
   },
   "trace": {
-    "match_rate": 1.0,
-    "n_match": 20,
-    "n_mismatch": 0
+    "match_rate": 0.95,
+    "n_match": 19,
+    "n_mismatch": 1
   }
 }
