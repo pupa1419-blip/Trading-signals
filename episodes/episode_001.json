@@ -1,0 +1,11 @@
+{
+  "episode_id": 1,
+  "call_date": "2026-06-05",
+  "ndx_call_level": 28957.6,
+  "ndx_target": 26061.8,
+  "resolved_date": "2026-09-20",
+  "ndx_resolved": 29634.09765625,
+  "drawdown_pct": 0.0234,
+  "weeks_in_risk": 15,
+  "outcome": "MISS"
+}
