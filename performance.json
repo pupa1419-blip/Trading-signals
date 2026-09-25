@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-08-07T16:30-0400",
-  "n_signals_logged": 28,
+  "generated_at": "2026-09-25T16:30-0400",
+  "n_signals_logged": 32,
   "model_a": {
-    "n_total": 25,
-    "n_correct": 11,
-    "accuracy_pct": 0.44,
-    "n_up": 13,
-    "n_neutral": 12,
-    "up_accuracy_pct": 0.462,
-    "neutral_accuracy_pct": 0.417,
-    "n_normal": 0,
-    "n_risk": 25,
-    "normal_accuracy_pct": null,
-    "risk_accuracy_pct": 0.44
+    "n_total": 28,
+    "n_correct": 13,
+    "accuracy_pct": 0.464,
+    "n_up": 15,
+    "n_neutral": 13,
+    "up_accuracy_pct": 0.533,
+    "neutral_accuracy_pct": 0.385,
+    "n_normal": 2,
+    "n_risk": 26,
+    "normal_accuracy_pct": 1.0,
+    "risk_accuracy_pct": 0.423
   },
   "signal_history": [
     {
@@ -239,6 +239,33 @@
       "actual_return": 0.055,
       "correct": false,
       "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-07-21",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.055,
+      "correct": false,
+      "risk_state": "RISK_ONGOING"
+    },
+    {
+      "date": "2026-09-25",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "BUY_SKIP",
+      "actual_return": 0.013,
+      "correct": true,
+      "risk_state": "NORMAL"
+    },
+    {
+      "date": "2026-09-25",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "BUY_SKIP",
+      "actual_return": 0.013,
+      "correct": true,
+      "risk_state": "NORMAL"
     }
   ]
 }
