@@ -1,14 +1,14 @@
 {
-  "week": "2026-W39",
-  "generated_at": "2026-09-25T16:30-0400",
-  "scenario": "A",
+  "week": "2026-W41",
+  "generated_at": "2026-10-09T16:30-0400",
+  "scenario": "B",
   "regime": {
-    "scenario": "A",
-    "state": "NORMAL",
+    "scenario": "B",
+    "state": "RISK_ACTIVE",
     "weeks_in_risk": 0,
-    "ndx_call_level": null,
-    "ndx_target": null,
-    "ndx_now": 30608.13
+    "ndx_call_level": 30883.15,
+    "ndx_target": 27794.8,
+    "ndx_now": 30883.15
   },
   "weekly_signals": [
     {
@@ -21,24 +21,6 @@
       "risk_state": "RISK_ONGOING"
     },
     {
-      "date": "2026-07-21",
-      "direction": "NEUTRAL",
-      "vote": "7/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.055,
-      "correct": false,
-      "risk_state": "RISK_ONGOING"
-    },
-    {
-      "date": "2026-07-21",
-      "direction": "NEUTRAL",
-      "vote": "7/9",
-      "action": "SKIP_RISK",
-      "actual_return": 0.055,
-      "correct": false,
-      "risk_state": "RISK_ONGOING"
-    },
-    {
       "date": "2026-09-25",
       "direction": "UP",
       "vote": "5/9",
@@ -54,19 +36,37 @@
       "action": "BUY_SKIP",
       "actual_return": 0.013,
       "correct": true,
+      "risk_state": "NORMAL"
+    },
+    {
+      "date": "2026-09-28",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP",
+      "actual_return": -0.0322,
+      "correct": true,
+      "risk_state": "NORMAL"
+    },
+    {
+      "date": "2026-10-05",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP",
+      "actual_return": 0.026,
+      "correct": false,
       "risk_state": "NORMAL"
     }
   ],
-  "weekly_accuracy": "2/5",
+  "weekly_accuracy": "3/5",
   "cumulative": {
-    "accuracy_pct": 0.464,
-    "n_correct": 13,
-    "n_total": 28,
-    "normal_accuracy_pct": 1.0
+    "accuracy_pct": 0.467,
+    "n_correct": 14,
+    "n_total": 30,
+    "normal_accuracy_pct": 0.75
   },
   "model_b": {
-    "current_signal": 0,
-    "signal_date": "2026-09-25",
+    "current_signal": 1,
+    "signal_date": "2026-10-09",
     "alert_weeks": 0
   },
   "trace": {
