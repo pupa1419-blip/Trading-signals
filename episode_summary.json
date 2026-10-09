@@ -1,13 +1,20 @@
 {
-  "generated_at": "2026-09-25T16:30-0400",
+  "generated_at": "2026-10-09T16:30-0400",
   "model_b": {
     "n_resolved": 1,
     "n_correct": 0,
     "n_miss": 1,
-    "n_active": 0,
+    "n_active": 1,
     "accuracy": 0.0
   },
-  "active_episode": null,
+  "active_episode": {
+    "episode_id": 1,
+    "call_date": "2026-10-10",
+    "ndx_call_level": 30883.15,
+    "ndx_target": 27794.8,
+    "weeks_in_risk": null,
+    "current_drawdown": 0.0
+  },
   "episodes": [
     {
       "id": 1,
@@ -18,6 +25,16 @@
       "weeks": 15,
       "max_drawdown": 0.0234,
       "resolved_date": "2026-09-20"
+    },
+    {
+      "id": 1,
+      "call_date": "2026-10-10",
+      "ndx_call": 30883.15,
+      "ndx_target": 27794.8,
+      "outcome": null,
+      "weeks": null,
+      "max_drawdown": null,
+      "resolved_date": null
     }
   ]
 }
