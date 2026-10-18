@@ -26,3 +26,4 @@
 {"signal_date": "2026-10-14", "logged_at": "2026-10-13T16:05:09-0400", "action": "SKIP_RISK", "price_ordered": 78.72, "qty_ordered": 0, "position_after": 0, "fill_price": null, "fill_qty": null}
 {"signal_date": "2026-10-15", "logged_at": "2026-10-14T16:05:08-0400", "action": "SKIP_RISK", "price_ordered": 74.05, "qty_ordered": 0, "position_after": 0, "fill_price": null, "fill_qty": null}
 {"signal_date": "2026-10-16", "logged_at": "2026-10-15T16:05:07-0400", "action": "SKIP_RISK", "price_ordered": 74.11, "qty_ordered": 0, "position_after": 0, "fill_price": null, "fill_qty": null}
+{"signal_date": "2026-10-19", "logged_at": "2026-10-18T16:05:07-0400", "action": "SKIP_RISK", "price_ordered": 68.23, "qty_ordered": 0, "position_after": 0, "fill_price": null, "fill_qty": null}
