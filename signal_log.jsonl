@@ -34,3 +34,4 @@
 {"signal_date": "2026-10-15", "logged_at": "2026-10-14T15:00:15-0400", "risk_state": "RISK_ACTIVE", "consensus_a": "UP", "vote_sum_a": 5, "vote_th_a": 7, "signal_b": 0}
 {"signal_date": "2026-10-16", "logged_at": "2026-10-15T15:00:17-0400", "risk_state": "RISK_ACTIVE", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "signal_b": 0}
 {"signal_date": "2026-10-19", "logged_at": "2026-10-18T15:00:11-0400", "risk_state": "RISK_ACTIVE", "consensus_a": "NEUTRAL", "vote_sum_a": 7, "vote_th_a": 7, "signal_b": 0}
+{"signal_date": "2026-10-20", "logged_at": "2026-10-19T15:00:47-0400", "risk_state": "RISK_ACTIVE", "consensus_a": "NEUTRAL", "vote_sum_a": 8, "vote_th_a": 7, "signal_b": 0}
