@@ -1,72 +1,72 @@
 {
-  "week": "2026-W41",
-  "generated_at": "2026-10-09T16:30-0400",
-  "scenario": "B",
+  "week": "2026-W47",
+  "generated_at": "2026-11-20T17:30-0400",
+  "scenario": "A",
   "regime": {
-    "scenario": "B",
-    "state": "RISK_ACTIVE",
+    "scenario": "A",
+    "state": "NORMAL",
     "weeks_in_risk": 0,
-    "ndx_call_level": 30883.15,
-    "ndx_target": 27794.8,
-    "ndx_now": 30883.15
+    "ndx_call_level": null,
+    "ndx_target": null,
+    "ndx_now": 25028.98
   },
   "weekly_signals": [
     {
-      "date": "2026-07-21",
+      "date": "2026-10-19",
       "direction": "NEUTRAL",
       "vote": "7/9",
       "action": "SKIP_RISK",
-      "actual_return": 0.055,
+      "actual_return": 0.0356,
       "correct": false,
-      "risk_state": "RISK_ONGOING"
+      "risk_state": "RISK_ACTIVE"
     },
     {
-      "date": "2026-09-25",
-      "direction": "UP",
-      "vote": "5/9",
-      "action": "BUY_SKIP",
-      "actual_return": 0.013,
+      "date": "2026-10-20",
+      "direction": "NEUTRAL",
+      "vote": "8/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0033,
       "correct": true,
-      "risk_state": "NORMAL"
+      "risk_state": "RISK_ACTIVE"
     },
     {
-      "date": "2026-09-25",
-      "direction": "UP",
-      "vote": "5/9",
-      "action": "BUY_SKIP",
-      "actual_return": 0.013,
-      "correct": true,
-      "risk_state": "NORMAL"
-    },
-    {
-      "date": "2026-09-28",
+      "date": "2026-10-29",
       "direction": "NEUTRAL",
       "vote": "7/9",
-      "action": "SKIP",
-      "actual_return": -0.0322,
+      "action": "SKIP_RISK",
+      "actual_return": -0.0428,
       "correct": true,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-11-09",
+      "direction": "NEUTRAL",
+      "vote": "9/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.102,
+      "correct": false,
       "risk_state": "NORMAL"
     },
     {
-      "date": "2026-10-05",
+      "date": "2026-11-09",
       "direction": "NEUTRAL",
-      "vote": "7/9",
+      "vote": "9/9",
       "action": "SKIP",
-      "actual_return": 0.026,
+      "actual_return": 0.102,
       "correct": false,
       "risk_state": "NORMAL"
     }
   ],
-  "weekly_accuracy": "3/5",
+  "weekly_accuracy": "2/5",
   "cumulative": {
-    "accuracy_pct": 0.467,
-    "n_correct": 14,
-    "n_total": 30,
-    "normal_accuracy_pct": 0.75
+    "accuracy_pct": 0.425,
+    "n_correct": 17,
+    "n_total": 40,
+    "normal_accuracy_pct": 0.429
   },
   "model_b": {
-    "current_signal": 1,
-    "signal_date": "2026-10-09",
+    "current_signal": 0,
+    "signal_date": "2026-11-20",
     "alert_weeks": 0
   },
   "trace": {
