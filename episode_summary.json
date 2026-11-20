@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T17:05-0400",
+  "generated_at": "2026-11-20T17:30-0400",
   "model_b": {
     "n_resolved": 1,
     "n_correct": 1,
@@ -12,8 +12,8 @@
     "call_date": "2026-10-10",
     "ndx_call_level": 30883.15,
     "ndx_target": 27794.8,
-    "weeks_in_risk": 4,
-    "current_drawdown": -0.1265
+    "weeks_in_risk": null,
+    "current_drawdown": -0.1896
   },
   "episodes": [
     {
