@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-10-09T16:30-0400",
-  "n_signals_logged": 34,
+  "generated_at": "2026-11-20T17:30-0400",
+  "n_signals_logged": 44,
   "model_a": {
-    "n_total": 30,
-    "n_correct": 14,
-    "accuracy_pct": 0.467,
-    "n_up": 15,
-    "n_neutral": 15,
-    "up_accuracy_pct": 0.533,
-    "neutral_accuracy_pct": 0.4,
-    "n_normal": 4,
-    "n_risk": 26,
-    "normal_accuracy_pct": 0.75,
-    "risk_accuracy_pct": 0.423
+    "n_total": 40,
+    "n_correct": 17,
+    "accuracy_pct": 0.425,
+    "n_up": 19,
+    "n_neutral": 21,
+    "up_accuracy_pct": 0.421,
+    "neutral_accuracy_pct": 0.429,
+    "n_normal": 7,
+    "n_risk": 33,
+    "normal_accuracy_pct": 0.429,
+    "risk_accuracy_pct": 0.424
   },
   "signal_history": [
     {
@@ -282,6 +282,96 @@
       "vote": "7/9",
       "action": "SKIP",
       "actual_return": 0.026,
+      "correct": false,
+      "risk_state": "NORMAL"
+    },
+    {
+      "date": "2026-10-12",
+      "direction": "UP",
+      "vote": "6/9",
+      "action": "BUY_SKIP",
+      "actual_return": -0.0205,
+      "correct": false,
+      "risk_state": "NORMAL"
+    },
+    {
+      "date": "2026-10-13",
+      "direction": "UP",
+      "vote": "3/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.01,
+      "correct": false,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-10-14",
+      "direction": "UP",
+      "vote": "4/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0595,
+      "correct": false,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-10-15",
+      "direction": "UP",
+      "vote": "5/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.004,
+      "correct": false,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-10-16",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.076,
+      "correct": true,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-10-19",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.0356,
+      "correct": false,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-10-20",
+      "direction": "NEUTRAL",
+      "vote": "8/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0033,
+      "correct": true,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-10-29",
+      "direction": "NEUTRAL",
+      "vote": "7/9",
+      "action": "SKIP_RISK",
+      "actual_return": -0.0428,
+      "correct": true,
+      "risk_state": "RISK_ACTIVE"
+    },
+    {
+      "date": "2026-11-09",
+      "direction": "NEUTRAL",
+      "vote": "9/9",
+      "action": "SKIP_RISK",
+      "actual_return": 0.102,
+      "correct": false,
+      "risk_state": "NORMAL"
+    },
+    {
+      "date": "2026-11-09",
+      "direction": "NEUTRAL",
+      "vote": "9/9",
+      "action": "SKIP",
+      "actual_return": 0.102,
       "correct": false,
       "risk_state": "NORMAL"
     }
